@@ -37,6 +37,12 @@ form button{
 div.task{
   background-color: #30313D;
   border-radius: 10px;
-  padding: 5px;
+  padding: 5px 9px;
   margin-top: 5px;
+  display: flex;
+}
+
+svg{
+  height: 20px;
+  margin-right: 4px;
 }
