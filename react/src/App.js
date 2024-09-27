@@ -8,13 +8,15 @@ function App() {
   const [tasks,setTasks] = useState([]);
   function addTask(){
     setTasks((prev)=>{
-      return [...prev,{name:name,done:false}]
+      return [...prev,{name:namee,done:false}]
     });
   }
   return (
    <main>
       <TaskForm onAdd={addTask} />
-      <Task/>
+      {tasks.map(task=>(
+        <Task/>
+      ))}
    </main>
   );
 }

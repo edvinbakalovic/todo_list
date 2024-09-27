@@ -2,8 +2,12 @@ import {useState} from "react";
 
 export default function TaskForm({onAdd}){
     const [taskName,setTaskName] = useState(' ');
+    function handleSubmit(ev){
+      ev.preventDefault();
+      onAdd(taskName);
+    }
     return(
-    <form onSubmit={ev=>onAdd(taskName)}>
+    <form onSubmit={handleSubmit}>
       <button>+</button>
       <input type="text" 
       value={taskName}
