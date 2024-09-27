@@ -6,9 +6,14 @@ import TaskForm from './TaskForm.js';
 
 function App() {
   const [tasks,setTasks] = useState([]);
+  function addTask(){
+    setTasks((prev)=>{
+      return [...prev,{name:name,done:false}]
+    });
+  }
   return (
    <main>
-      <TaskForm/>
+      <TaskForm onAdd={addTask} />
       <Task/>
    </main>
   );
