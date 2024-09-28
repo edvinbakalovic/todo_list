@@ -1,6 +1,6 @@
 body{
   background-color: #17181f;
-  color: #aaa;
+  color: #ddd;
 }
 
 main{
@@ -26,6 +26,7 @@ form input[type="text"]{
   display: block;
   width: 100%;
   color: #fff;
+  margin-left: 6px;
 }
 
 form button{
@@ -41,9 +42,34 @@ div.task{
   padding: 5px 9px;
   margin-top: 5px;
   display: flex;
+  transition: opacity .3s linear;
 }
 
 svg{
   height: 20px;
-  margin-right: 4px;
+  margin-right: 6px;
+  fill:#61DAFB;
 }
+
+div.task.done{
+  opacity: 0.3;
+}
+
+div.task span{
+  position: relative;
+}
+
+ div.task span:before{
+  content:'';
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #ddd;
+  position:absolute;
+  top: 12px;
+  transition: width .1s linear;
+ }
+
+ div.task.done span:before{
+  width: 100%;
+ }
