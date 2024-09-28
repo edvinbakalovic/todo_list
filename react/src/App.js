@@ -31,8 +31,13 @@ function App() {
 
   }
 
+  const numberComplete = tasks.filter((task)=>{
+    return task.done;
+  })
+
   return (
    <main>
+    <h1>{numberComplete.length}/{tasks.length} Complete</h1>
       <TaskForm onAdd={addTask} />
       {tasks.map((task,index)=>(
         <Task {...task} 
