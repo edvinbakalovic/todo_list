@@ -27,7 +27,8 @@ function App() {
       const newTasks = [...prev];
       newTasks[taskIndex].done=newDone;
       return newTasks;
-    })
+    });
+
   }
 
   return (
