@@ -6,15 +6,15 @@ import TaskForm from './TaskForm.js';
 
 function App() {
   const [tasks,setTasks] = useState([]);
-  function addTask(){
+  function addTask(name){
     setTasks((prev)=>{
-      return [...prev,{name:namee,done:false}]
+      return [...prev,{name:name,done:false}]
     });
   }
   return (
    <main>
       <TaskForm onAdd={addTask} />
-      {tasks.map(task=>(
+      {tasks.map((task)=>(
         <Task/>
       ))}
    </main>
