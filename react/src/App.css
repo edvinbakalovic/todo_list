@@ -73,3 +73,10 @@ div.task span{
  div.task.done span:before{
   width: 100%;
  }
+
+ h1{
+  text-align: center;
+ }
+ h2{
+  text-align: center;
+ }

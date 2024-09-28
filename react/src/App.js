@@ -31,13 +31,22 @@ function App() {
 
   }
 
-  const numberComplete = tasks.filter((task)=>{
-    return task.done;
-  })
+  const numberComplete = tasks.filter(task=>(task.done)).length;
+  let message = '';
 
+  if(numberComplete===0)
+    message='Try to do it all!👇😉';
+  else if(numberComplete+1===tasks.length)
+    message="One more left!💪🔥";
+  else if(numberComplete===tasks.length)
+    message='All done!🥳✅';
+  else
+    message='Keep going!🤩🚀';
+  
   return (
    <main>
-    <h1>{numberComplete.length}/{tasks.length} Complete</h1>
+    <h1>{numberComplete}/{tasks.length} Complete</h1>
+    <h2>{message}</h2>
       <TaskForm onAdd={addTask} />
       {tasks.map((task,index)=>(
         <Task {...task} 
