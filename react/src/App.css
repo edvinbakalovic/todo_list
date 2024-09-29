@@ -42,7 +42,13 @@ div.task{
   padding: 5px 9px;
   margin-top: 5px;
   display: flex;
+  align-items: center;
   transition: opacity .3s linear;
+}
+
+div.checkbox{
+  display:flex;
+  align-items: center;
 }
 
 svg{
@@ -79,4 +85,18 @@ div.task span{
  }
  h2{
   text-align: center;
+ }
+div.task-name{
+  flex-grow: 1;
+}
+ button.trash{
+  background:none;
+  border:none;
+  display: flex;
+  cursor: pointer;
+ }
+
+ button.trash svg{
+  fill:#888;
+  height: 14px;;
  }
