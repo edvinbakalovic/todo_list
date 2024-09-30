@@ -28,7 +28,14 @@ function App() {
       newTasks[taskIndex].done=newDone;
       return newTasks;
     });
+  }
 
+  function removeTask(taskIndex){
+    setTasks((prev)=>{
+      return prev.filter((task,index)=>{
+        return index!==taskIndex;
+      });
+    });
   }
 
   const numberComplete = tasks.filter(task=>(task.done)).length;
@@ -49,7 +56,8 @@ function App() {
     <h2>{message}</h2>
       <TaskForm onAdd={addTask} />
       {tasks.map((task,index)=>(
-        <Task {...task} 
+        <Task {...task}
+          onTrash={()=>removeTask(index)} 
           onToggle={done => updateTaskDone(index,done)}/>
       ))}
    </main>
